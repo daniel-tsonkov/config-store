@@ -1,0 +1,21 @@
+{
+  "name": "config-store",
+  "version": "1.0.0",
+  "description": "Repository hosting the config-store application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daniel-tsonkov/config-store.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/daniel-tsonkov/config-store/issues"
+  },
+  "homepage": "https://github.com/daniel-tsonkov/config-store#readme"
+}
