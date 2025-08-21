@@ -59,7 +59,7 @@ apiRouter.put("/kv/:key", async (req, res) => {
   }
 
   try {
-    const [updatedCount] = await KV.update({ where: { key: key } });
+    const [updatedCount] = await KV.update({ value }, { where: { key: key } });
 
     if (updatedCount > 0) {
       const updatedKv = await KV.findOne({ where: { key } });
@@ -70,8 +70,7 @@ apiRouter.put("/kv/:key", async (req, res) => {
         return res.status(404).json({ error: "key not found" });
       }
     } else {
-      const newKv = await KV.create({ key, value });
-      return res.status(201).json({ data: newKv });
+      return res.status(404).json({ error: "key not found" });
     }
   } catch (err) {
     return res.status(500).json({ error: err.message });
@@ -85,7 +84,7 @@ apiRouter.delete("/kv/:key", async (req, res) => {
     const deleted = await KV.destroy({ where: { key: key } });
 
     if (deleted > 0) {
-      return res.status(204);
+      return res.sendStatus(204);
     } else {
       return res.status(404).json({ error: "key not found" });
     }
