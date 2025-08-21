@@ -14,7 +14,7 @@ app.get("/", (req, res) => {
 });
 db.authenticate()
   .then(() => {
-    console.log("Conenected to PostgreSQL");
+    console.log("Conenected to PostgreSQL.");
     return db.sync();
   })
   .then(() => {
